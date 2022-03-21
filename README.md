@@ -1,10 +1,27 @@
-# Пример gRPC клиента и сервера
+# gRPC
 
-## [Установка зависимостей](https://grpc.io/docs/languages/go/quickstart/#prerequisites)
+Server and client based on gRPC.
 
-### Запуск
-1) ```go run cmd/server/main.go```
-2) ```go run cmd/client/main.go```
+## Installing
 
-### Генерация .pb.go файлов
-```protoc --go_out=plugins=grpc:proto proto/notification.proto```
+```
+go get github.com/radmirid/grpc
+```
+
+## Running
+
+`Server`
+
+```
+go run cmd/server/server.go
+```
+
+`Client`
+
+```
+go run cmd/client/client.go
+```
+
+## LICENSE
+
+[MIT License](LICENSE)

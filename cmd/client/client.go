@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/GOLANG-NINJA/grpc-app/proto/notification"
+	"github.com/radmirid/grpc/proto/notification"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 )
@@ -18,10 +18,10 @@ func main() {
 
 	c := notification.NewNotificationServiceClient(conn)
 
-	response, err := c.Notify(context.Background(), &notification.NotificationRequest{Message: "Я на пути к становлению ниндзей!"})
+	response, err := c.Notify(context.Background(), &notification.NotificationRequest{Message: "message"})
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	log.Println("STATUS:", response.Status)
+	log.Println(response.Status)
 }
